@@ -5,7 +5,8 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
   System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, CPort, System.TypInfo;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, CPort, System.TypInfo,
+  System.Math;
 
 type
   TfrmSerialMonitor = class(TForm)
@@ -31,6 +32,7 @@ type
     memRecepcao: TMemo;
     btnEnviar: TButton;
     serial: TComPort;
+    ckbCR: TCheckBox;
 
     procedure atualizaPortaCom();
     procedure atualizaVelocidades();
@@ -122,7 +124,7 @@ end;
 
 procedure TfrmSerialMonitor.btnAbrirPortaClick(Sender: TObject);
 begin
-  IF NOT serial.Connected THEN
+  IF serial.Connected THEN
     serial.Close;
 
   serial.Port := cboPorta.Text;
@@ -140,12 +142,14 @@ end;
 
 procedure TfrmSerialMonitor.btnEnviarClick(Sender: TObject);
 var
-  mensagem : String;
+  mensagem, crtext: String;
 begin
-   mensagem := txtTransmissao.Text;
 
-   //Envia a mensagem e Enter+Cr
-   serial.WriteStr(mensagem + #13#10);
+  IF ckbCR.Checked THEN
+    crtext := #13#10;
+
+  mensagem := txtTransmissao.Text + crtext;
+  serial.WriteStr(mensagem);
 end;
 
 procedure TfrmSerialMonitor.btnFecharPortaClick(Sender: TObject);
@@ -175,7 +179,7 @@ end;
 
 procedure TfrmSerialMonitor.serialRxChar(Sender: TObject; Count: Integer);
 var
-  mensagem : String;
+  mensagem: String;
 begin
   serial.ReadStr(mensagem, Count);
   memRecepcao.Lines.Add(mensagem);

@@ -32,6 +32,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cboPorta = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnSair = new System.Windows.Forms.Button();
+            this.btnFecharPorta = new System.Windows.Forms.Button();
+            this.btnAbrirPorta = new System.Windows.Forms.Button();
             this.cboVelocidade = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.cboParidade = new System.Windows.Forms.ComboBox();
@@ -41,16 +44,14 @@
             this.cboBitParada = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.serial = new System.IO.Ports.SerialPort(this.components);
-            this.btnAbrirPorta = new System.Windows.Forms.Button();
-            this.btnFecharPorta = new System.Windows.Forms.Button();
-            this.btnSair = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtTransmissao = new System.Windows.Forms.TextBox();
             this.btnEnviar = new System.Windows.Forms.Button();
+            this.txtTransmissao = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtRecepcao = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.ckbCR = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -85,6 +86,36 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ações";
+            // 
+            // btnSair
+            // 
+            this.btnSair.Location = new System.Drawing.Point(4, 77);
+            this.btnSair.Name = "btnSair";
+            this.btnSair.Size = new System.Drawing.Size(156, 23);
+            this.btnSair.TabIndex = 2;
+            this.btnSair.Text = "Sair";
+            this.btnSair.UseVisualStyleBackColor = true;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
+            // 
+            // btnFecharPorta
+            // 
+            this.btnFecharPorta.Location = new System.Drawing.Point(4, 48);
+            this.btnFecharPorta.Name = "btnFecharPorta";
+            this.btnFecharPorta.Size = new System.Drawing.Size(156, 23);
+            this.btnFecharPorta.TabIndex = 1;
+            this.btnFecharPorta.Text = "Fechar Porta";
+            this.btnFecharPorta.UseVisualStyleBackColor = true;
+            this.btnFecharPorta.Click += new System.EventHandler(this.btnFecharPorta_Click);
+            // 
+            // btnAbrirPorta
+            // 
+            this.btnAbrirPorta.Location = new System.Drawing.Point(6, 19);
+            this.btnAbrirPorta.Name = "btnAbrirPorta";
+            this.btnAbrirPorta.Size = new System.Drawing.Size(156, 23);
+            this.btnAbrirPorta.TabIndex = 0;
+            this.btnAbrirPorta.Text = "Abrir Porta";
+            this.btnAbrirPorta.UseVisualStyleBackColor = true;
+            this.btnAbrirPorta.Click += new System.EventHandler(this.btnAbrirPorta_Click);
             // 
             // cboVelocidade
             // 
@@ -178,38 +209,9 @@
             // 
             this.serial.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.serial_DataReceived);
             // 
-            // btnAbrirPorta
-            // 
-            this.btnAbrirPorta.Location = new System.Drawing.Point(6, 19);
-            this.btnAbrirPorta.Name = "btnAbrirPorta";
-            this.btnAbrirPorta.Size = new System.Drawing.Size(156, 23);
-            this.btnAbrirPorta.TabIndex = 0;
-            this.btnAbrirPorta.Text = "Abrir Porta";
-            this.btnAbrirPorta.UseVisualStyleBackColor = true;
-            this.btnAbrirPorta.Click += new System.EventHandler(this.btnAbrirPorta_Click);
-            // 
-            // btnFecharPorta
-            // 
-            this.btnFecharPorta.Location = new System.Drawing.Point(4, 48);
-            this.btnFecharPorta.Name = "btnFecharPorta";
-            this.btnFecharPorta.Size = new System.Drawing.Size(156, 23);
-            this.btnFecharPorta.TabIndex = 1;
-            this.btnFecharPorta.Text = "Fechar Porta";
-            this.btnFecharPorta.UseVisualStyleBackColor = true;
-            this.btnFecharPorta.Click += new System.EventHandler(this.btnFecharPorta_Click);
-            // 
-            // btnSair
-            // 
-            this.btnSair.Location = new System.Drawing.Point(4, 77);
-            this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(156, 23);
-            this.btnSair.TabIndex = 2;
-            this.btnSair.Text = "Sair";
-            this.btnSair.UseVisualStyleBackColor = true;
-            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
-            // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.ckbCR);
             this.groupBox2.Controls.Add(this.btnEnviar);
             this.groupBox2.Controls.Add(this.txtTransmissao);
             this.groupBox2.Controls.Add(this.label6);
@@ -219,23 +221,6 @@
             this.groupBox2.TabIndex = 11;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Transmissão";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(7, 20);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(56, 13);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Conteúdo:";
-            // 
-            // txtTransmissao
-            // 
-            this.txtTransmissao.Location = new System.Drawing.Point(10, 37);
-            this.txtTransmissao.Multiline = true;
-            this.txtTransmissao.Name = "txtTransmissao";
-            this.txtTransmissao.Size = new System.Drawing.Size(657, 57);
-            this.txtTransmissao.TabIndex = 1;
             // 
             // btnEnviar
             // 
@@ -247,6 +232,23 @@
             this.btnEnviar.Text = "Enviar";
             this.btnEnviar.UseVisualStyleBackColor = true;
             this.btnEnviar.Click += new System.EventHandler(this.btnEnviar_Click);
+            // 
+            // txtTransmissao
+            // 
+            this.txtTransmissao.Location = new System.Drawing.Point(10, 37);
+            this.txtTransmissao.Multiline = true;
+            this.txtTransmissao.Name = "txtTransmissao";
+            this.txtTransmissao.Size = new System.Drawing.Size(657, 57);
+            this.txtTransmissao.TabIndex = 1;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(7, 20);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(56, 13);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Conteúdo:";
             // 
             // groupBox3
             // 
@@ -275,6 +277,16 @@
             this.label7.Size = new System.Drawing.Size(57, 13);
             this.label7.TabIndex = 0;
             this.label7.Text = "Recepção";
+            // 
+            // ckbCR
+            // 
+            this.ckbCR.AutoSize = true;
+            this.ckbCR.Location = new System.Drawing.Point(10, 104);
+            this.ckbCR.Name = "ckbCR";
+            this.ckbCR.Size = new System.Drawing.Size(41, 17);
+            this.ckbCR.TabIndex = 3;
+            this.ckbCR.Text = "CR";
+            this.ckbCR.UseVisualStyleBackColor = true;
             // 
             // frmSerialMonitor
             // 
@@ -334,6 +346,7 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox txtRecepcao;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.CheckBox ckbCR;
     }
 }
 

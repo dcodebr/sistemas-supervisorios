@@ -87,7 +87,7 @@ object frmSerialMonitor: TfrmSerialMonitor
     end
   end
   object GroupBox2: TGroupBox
-    Left = 8
+    Left = 9
     Top = 135
     Width = 710
     Height = 121
@@ -116,6 +116,14 @@ object frmSerialMonitor: TfrmSerialMonitor
       Enabled = False
       TabOrder = 1
       OnClick = btnEnviarClick
+    end
+    object ckbCR: TCheckBox
+      Left = 9
+      Top = 77
+      Width = 97
+      Height = 17
+      Caption = 'CR'
+      TabOrder = 2
     end
   end
   object GroupBox3: TGroupBox

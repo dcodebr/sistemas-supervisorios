@@ -84,7 +84,7 @@ void loop() {
   ],
 ```
 
-5. Configure o mapeamento da comunicação de entrada e saída (TX/RX) serial na seção ***connections***. O mapeamento acontece através dos apelidos ****serial:*** (porta COM física ou virtual) e ***serialMonitor:*** (porta serial da placa no Wokwi):
+5. Configure o mapeamento da comunicação de entrada e saída (TX/RX) serial na seção ***connections***. O mapeamento acontece através dos apelidos ****serial:*** (porta COM física ou virtual) e ***serialMonitor:*** (porta serial do monitor serial do Wokwi):
 
 ```cpp
   "connections": [
@@ -92,6 +92,18 @@ void loop() {
     ["$serialMonitor:TX", "serial:RX", ""]
   ]
 ```
+
+Caso precise enviar as informações para a placa, utilize **uno:0** para ****RX*** e **uno:1** para ***TX***.
+
+```cpp
+  "connections": [
+    ["uno:0", "serial:TX", ""],
+    ["uno:1", "serial:RX", ""]
+  ]
+```
+
+*Obs.: uno:0 e uno:1 referem-se às portas digitais da placa*.
+
 
 6. Habilite o display do Monitor Serial do Wokwi na seção ***serialMonitor***:
 

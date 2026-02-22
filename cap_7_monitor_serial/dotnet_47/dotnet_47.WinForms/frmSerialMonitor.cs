@@ -120,7 +120,10 @@ namespace dotnet_47.WinForms
                 return;
             }
 
-            var conteudo = txtTransmissao.Text;
+            var crText = ckbCR.Checked ? "\r" : String.Empty;
+            var transmissao = txtTransmissao.Text;
+            var conteudo = $"{transmissao}{crText}";
+
             serial.Write(conteudo);
         }
 
