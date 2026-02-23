@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "author": "alex rocha",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": -162.6, "left": -797.4, "attrs": {} },
+    {
+      "type": "wokwi-serial-port",
+      "id": "serial",
+      "top": 0,
+      "left": 0,
+      "attrs": { "baud": "9600" }
+    },
+    { "type": "wokwi-potentiometer", "id": "pot1", "top": -164.5, "left": -365, "attrs": {} }
+  ],
+  "connections": [
+    [ "uno:0", "serial:TX", "", [] ],
+    [ "uno:1", "serial:RX", "", [] ],
+    [ "pot1:GND", "uno:GND.3", "black", [ "v144", "h-288" ] ],
+    [ "pot1:VCC", "uno:5V", "red", [ "v105.6", "h-327.2" ] ],
+    [ "pot1:SIG", "uno:A1", "purple", [ "v28.8", "h-250" ] ]
+  ],
+  "serialMonitor": { "display": "always" },
+  "dependencies": {}
+}

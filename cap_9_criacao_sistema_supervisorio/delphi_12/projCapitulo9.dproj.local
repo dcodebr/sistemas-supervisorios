@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2026/02/20 01:22:37.000.075,=C:\Users\alex\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2026/02/20 01:23:56.000.625,C:\Users\alex\Documents\Embarcadero\Studio\Projects\Unit1.dfm=D:\Git\Alex Rocha\supervisorios-visual-csharp\cap_7_monitor_serial\delphi_ce_121\uSerialMonitor.dfm</Transaction>
+    <Transaction>2026/02/20 01:23:56.000.625,C:\Users\alex\Documents\Embarcadero\Studio\Projects\Unit1.pas=D:\Git\Alex Rocha\supervisorios-visual-csharp\cap_7_monitor_serial\delphi_ce_121\uSerialMonitor.pas</Transaction>
+    <Transaction>2026/02/20 01:24:11.000.964,C:\Users\alex\Documents\Embarcadero\Studio\Projects\Project1.dproj=D:\Git\Alex Rocha\supervisorios-visual-csharp\cap_7_monitor_serial\delphi_ce_121\projMonitorSerial.dproj</Transaction>
+    <Transaction>2026/02/23 05:27:24.993,D:\Git\Alex Rocha\sistemas-supervisorios\cap_9_criacao_sistema_supervisorio\delphi_12\projCapitulo9.dproj=D:\Git\Alex Rocha\sistemas-supervisorios\cap_7_monitor_serial\delphi_12\projMonitorSerial.dproj</Transaction>
+    <Transaction>2026/02/23 05:29:34.495,D:\Git\Alex Rocha\sistemas-supervisorios\cap_9_criacao_sistema_supervisorio\delphi_12\uSerialMonitor.dfm=D:\Git\Alex Rocha\sistemas-supervisorios\cap_7_monitor_serial\delphi_12\uSerialMonitor.dfm</Transaction>
+    <Transaction>2026/02/23 05:29:34.495,D:\Git\Alex Rocha\sistemas-supervisorios\cap_9_criacao_sistema_supervisorio\delphi_12\uSerialMonitor.pas=D:\Git\Alex Rocha\sistemas-supervisorios\cap_7_monitor_serial\delphi_12\uSerialMonitor.pas</Transaction>
+  </Transactions>
+</BorlandProject>
